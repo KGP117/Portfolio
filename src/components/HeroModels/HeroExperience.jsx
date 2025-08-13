@@ -1,14 +1,29 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useMediaQuery } from 'react-responsive';
 import { Laptop } from './Laptop'
 import HeroLights from './HeroLights';
+import * as THREE from 'three';
 
 const HeroExperience = () => {
 
     const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
+    // Ref to access the Laptop mesh
+    const laptopRef = useRef();
+    const centerOffset = useRef(new THREE.Vector3());
+
+    // Calculate center of the model after it's loaded
+    useEffect(() => {
+        if (laptopRef.current) {
+            const box = new THREE.Box3().setFromObject(laptopRef.current);
+            const center = new THREE.Vector3();
+            box.getCenter(center);
+            centerOffset.current.copy(center);
+        }
+    }, []);
 
     return (
         <Canvas camera={{ position: [0, 0, 15], fov: 45}}>
@@ -18,18 +33,21 @@ const HeroExperience = () => {
                 enableZoom={false}
                 maxDistance={20}
                 minDistance={5}
-                minPolarAngle={Math.PI / 5}
-                maxPolarAngle={Math.PI / 2}
+                autoRotate
+                autoRotateSpeed={0.3}
             />
 
             <HeroLights />
 
             <group
-                scale={isMobile? 12: 15}
+                scale={isMobile ? 12 : 15}
                 position={[1, -2.5, 1]}
-                rotation={[0.2, Math.PI/0.3, 0]}
+                rotation={[Math.PI / 10, -Math.PI / 1.5, 0]}
             >
-                <Laptop />
+                <group position={centerOffset.current.clone().multiplyScalar(-1)}>
+                    <Laptop ref={laptopRef} />
+                </group>
+
             </group>
 
         </Canvas>
