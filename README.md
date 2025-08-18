@@ -38,7 +38,7 @@ To view or edit the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/KGP117/Portfolio
+git clone https://github.com/KGP117/Portfolio.git
 
 # Navigate into the project directory
 cd portfolio
