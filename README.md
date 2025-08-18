@@ -43,4 +43,4 @@ git clone https://github.com/KGP117/Portfolio
 # Navigate into the project directory
 cd portfolio
 
-# Open a new terminal and run 'npm run dev'
+# Run 'npm run dev'
