@@ -38,9 +38,9 @@ To view or edit the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/portfolio-website.git
+git clone https://github.com/KGP117/Portfolio
 
 # Navigate into the project directory
-cd portfolio-website
+cd portfolio
 
-# Open index.html in your browser
+# Open a new terminal and run 'npm run dev'
