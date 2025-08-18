@@ -7,20 +7,48 @@ Source: https://sketchfab.com/3d-models/laptop-3d-model-ba56c75ff9f4430da10cd3d2
 Title: Laptop 3D Model
 */
 
+import React, { useRef, useLayoutEffect, forwardRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
 
-export function Laptop(props) {
-  const { nodes, materials } = useGLTF('/models/laptop.glb')
+export const Laptop = forwardRef((props, ref) => {
+  const groupRef = useRef()
+  const { nodes, materials, scene } = useGLTF('/models/laptop.glb')
+
+  useLayoutEffect(() => {
+    if (!groupRef.current) return
+
+    // Get bounding box of all children
+    const bbox = new THREE.Box3().setFromObject(groupRef.current)
+    const center = new THREE.Vector3()
+    bbox.getCenter(center)
+
+    // Shift entire group so the model is centered at origin
+    groupRef.current.position.sub(center)
+  }, [])
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={groupRef} {...props}>
+      {/* Flattened hierarchy, no outer wrappers */}
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group position={[-0.005, 0.044, 0.15]} rotation={[0, 0, -Math.PI]} scale={[0.288, 0.412, 0.295]}>
-          <mesh geometry={nodes['Material19-material-material'].geometry} material={materials['Material19-material']} />
-          <mesh geometry={nodes['Material20-material-material'].geometry} material={materials['Material20-material']} />
+        <group
+          position={[-0.005, 0.044, 0.15]}
+          rotation={[0, 0, -Math.PI]}
+          scale={[0.288, 0.412, 0.295]}
+        >
+          <mesh
+            geometry={nodes['Material19-material-material'].geometry}
+            material={materials['Material19-material']}
+          />
+          <mesh
+            geometry={nodes['Material20-material-material'].geometry}
+            material={materials['Material20-material']}
+          />
         </group>
       </group>
     </group>
   )
-}
+})
 
 useGLTF.preload('/models/laptop.glb')
+

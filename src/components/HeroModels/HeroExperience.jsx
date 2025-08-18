@@ -41,7 +41,7 @@ const HeroExperience = () => {
 
             <group
                 scale={isMobile ? 12 : 15}
-                position={[1, -2.5, 1]}
+                position={isMobile ? [1, -2.5, 1] : [1, -1, 1]}
                 rotation={[Math.PI / 10, -Math.PI / 1.5, 0]}
             >
                 <group position={centerOffset.current.clone().multiplyScalar(-1)}>
