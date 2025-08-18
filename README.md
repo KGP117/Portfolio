@@ -1,12 +1,46 @@
-# React + Vite
+# 🧑‍💻 My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for my personal **coding and programming portfolio website**. This website showcases my skills, projects, and background as a developer. It's designed to serve as a central hub for everything I do related to software development, web technologies, and more.
 
-Currently, two official plugins are available:
+## 🌐 Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔗 [View the website here](https://yourusername.github.io)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📸 Overview
+
+This site includes:
+
+- **About Me** – Learn more about who I am and what I do.
+- **Projects** – Highlights of coding projects with links to GitHub repositories.
+- **Skills** – Technologies and tools I work with.
+- **Contact** – Simple contact form or ways to reach me.
+
+Feel free to explore the code and design!
+
+---
+
+## 🛠️ Built With
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- *(Optional additions: React, Tailwind CSS, Bootstrap, etc.)*
+- **Version Control:** Git & GitHub
+- **Deployment:** GitHub Pages *(or Netlify, Vercel, etc.)*
+
+---
+
+## 🚀 Getting Started
+
+To view or edit the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio-website.git
+
+# Navigate into the project directory
+cd portfolio-website
+
+# Open index.html in your browser
