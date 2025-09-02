@@ -49,7 +49,7 @@ const ShowcaseSection = () => {
 
                     <div className="first-project-wrapper" ref={project1Ref}>
                         <div className="image-wrapper">
-                            <img src="/images/TowerAscent.png" alt="TowerAscent" />
+                            <img src="./images/TowerAscent.png" alt="TowerAscent" />
                         </div>
                         <div className="text-content">
                             <h2>An interactive and puzzling platformer game, Tower Ascent.</h2>
@@ -64,14 +64,14 @@ const ShowcaseSection = () => {
                     <div className="project-list-wrapper overflow-hidden">
                         <div className="project" ref={project2Ref}>
                             <div>
-                                <img src="/images/AnimeGo.png" alt="AnimeGo" />
+                                <img src="./images/AnimeGo.png" alt="AnimeGo" />
                             </div>
                             <h2>AnimeGo - Anime Tracker App</h2>
                         </div>
 
                         <div className="project" ref={project3Ref}>
                             <div>
-                                <img src="/images/EeveeClicker.png" alt="EeveeClicker" />
+                                <img src="./images/EeveeClicker.png" alt="EeveeClicker" />
                             </div>
                             <h2>Eevee Clicker - Pokemon Clicker Game</h2>
                         </div>

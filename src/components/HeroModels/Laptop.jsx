@@ -13,7 +13,7 @@ import * as THREE from 'three'
 
 export const Laptop = forwardRef((props, ref) => {
   const groupRef = useRef()
-  const { nodes, materials, scene } = useGLTF('/models/laptop.glb')
+  const { nodes, materials, scene } = useGLTF('./models/laptop.glb')
 
   useLayoutEffect(() => {
     if (!groupRef.current) return
@@ -50,5 +50,5 @@ export const Laptop = forwardRef((props, ref) => {
   )
 })
 
-useGLTF.preload('/models/laptop.glb')
+useGLTF.preload('./models/laptop.glb')
 
